@@ -5,9 +5,8 @@ import {
     Link, useHistory,
     useLocation
 } from 'react-router-dom';
-import loginI from '../../images/login.png'
-import Navigation from '../SharedPage/Navigation/Navigation'
-import useAuth from '../../hooks/useAuth'
+import loginI from '../../../images/login.png'
+import useAuth from '../../../hooks/useAuth'
 const Login = () => {
     const [loginData, setLoginData] = useState({})
     const { user, handleLogin, error, handleGoogleSignIn } = useAuth()
@@ -32,7 +31,7 @@ const Login = () => {
     return (
         <Container >
 
-            {user.email && (<Navigation></Navigation>)}
+
             <Grid container spacing={2}>
 
                 <Grid xs={12} md={6} sx={{ mt: 5 }}>
@@ -56,10 +55,10 @@ const Login = () => {
                             name="password"
                             type="password"
                             variant="standard" />
-                        <Button variant="contained" sx={{ width: "75%", my: 3 }} type="submit">Login</Button>
+                        <Button variant="contained" sx={{ width: "75%", my: 3, bgcolor: 'secondary.main' }} type="submit">Login</Button>
                         <Link style={{ textDecoration: 'none' }} to="/register"> <Button variant="text"> New user? Please Register</Button></Link>
                         <p>----------------------------</p>
-                        <Button variant="contained" sx={{ width: "75%", my: 3 }} onClick={googleSignInBtn} >Google SignIn</Button>
+                        <Button variant="contained" sx={{ width: "75%", my: 3, bgcolor: 'secondary.main' }} onClick={googleSignInBtn} >Google SignIn</Button>
                     </form>
 
                 </Grid>

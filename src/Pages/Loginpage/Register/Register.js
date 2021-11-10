@@ -72,10 +72,10 @@ const Register = () => {
                                     name="password2"
                                     type="password"
                                     variant="standard" />
-                                <Button variant="contained" sx={{ width: "75%", my: 3 }} type="submit">Submit</Button>
+                                <Button variant="contained" sx={{ width: "75%", my: 3, bgcolor: 'secondary.main' }} type="submit">Submit</Button>
                                 <Link style={{ textDecoration: 'none' }} to="/login"> <Button variant="text"> Already Register ? Please Login</Button></Link>
                                 <p>------------------------</p>
-                                <Button variant="contained" sx={{ width: "75%", my: 3 }} onClick={googleSignInBtn}>Google SignIn</Button>
+                                <Button variant="contained" sx={{ width: "75%", my: 3, bgcolor: 'secondary.main' }} onClick={googleSignInBtn}>Google SignIn</Button>
 
 
                             </form>
