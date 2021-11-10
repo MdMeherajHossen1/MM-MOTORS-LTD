@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react'
-import initializeAuthentication from "../Pages/Login/Firebase/firebase.init";
+import initializeAuthentication from "../Pages/Loginpage/Firebase/firebase.init";
 import {
     getAuth, createUserWithEmailAndPassword,
     updateProfile, signInWithPopup,
     GoogleAuthProvider, signOut, onAuthStateChanged,
     signInWithEmailAndPassword, getIdToken
 } from "firebase/auth";
+
 initializeAuthentication()
+
+
 const useFirebase = () => {
+
     const auth = getAuth();
     const [user, setUser] = useState({})
     const [error, setError] = useState('')
@@ -125,7 +129,7 @@ const useFirebase = () => {
             .then(data => {
                 setAdmin(data.admin)
             })
-    }, [user.email])
+    }, [user?.email])
     return {
         user,
         error,

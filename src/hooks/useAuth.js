@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { AuthContext } from "../contexts/AuthProvider/AuthProvider"
+import { AuthContext } from "../context/AuthProvider/AuthProvider"
 
 
 
