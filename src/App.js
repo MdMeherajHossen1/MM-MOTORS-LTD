@@ -4,6 +4,9 @@ import Home from './Pages/Homepage/Home/Home'
 import AuthProvider from './context/AuthProvider/AuthProvider';
 import Login from './Pages/Loginpage/Login/Login';
 import Register from './Pages/Loginpage/Register/Register';
+import AllCars from './Pages/AllCars/AllCars';
+import Dashboard from './Pages/Dashboardpage/Dashboard/Dashboard'
+import PrivateRoute from './Pages/Sharedpage/PrivateRoute/PrivateRoute'
 function App() {
   return (
     <div className="App">
@@ -19,6 +22,12 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
+            <Route path="/allcars">
+              <AllCars></AllCars>
+            </Route>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
           </Switch>
         </Router>
       </AuthProvider>

@@ -21,12 +21,12 @@ const Banner = () => {
             justifyContent="center">
             <Box>
                 <Typography variant="h2" component="div" sx={{ pt: 3, color: 'white', fontWeight: 'bold' }}>
-                    Welcome to <span style={{ color: '#cb00f5', fontWeight: 'bold' }}> MM MOTORS LTD</span>
+                    Welcome to <span style={{ color: '#FF0000', fontWeight: 'bold' }}> MM MOTORS LTD</span>
                 </Typography>
                 <Typography variant="h4" component="div" gutterBottom sx={{ color: 'white' }}>
                     The way it should be
                 </Typography>
-                <Button variant="contained" sx={{ bgcolor: 'secondary.main' }}>Find your Car</Button>
+                <Button variant="contained" sx={{ bgcolor: '#1C0C5B' }}>Find your Car</Button>
             </Box>
 
         </Box>

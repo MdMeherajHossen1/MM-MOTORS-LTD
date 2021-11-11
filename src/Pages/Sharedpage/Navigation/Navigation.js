@@ -14,7 +14,7 @@ const Navigation = () => {
     const { user, handleSignOut } = useAuth()
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="fixed" sx={{ bgcolor: "secondary.main" }}>
+            <AppBar position="fixed" sx={{ bgcolor: "#1C0C5B" }}>
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -28,6 +28,7 @@ const Navigation = () => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
                         MM MOTORS LTD
                     </Typography>
+                    <Link to="/allcars"> <Button color="inherit">All Cars</Button></Link>
                     {
                         user.email && <Link to="/dashboard"> <Button color="inherit">Dashboard</Button></Link>
                     }

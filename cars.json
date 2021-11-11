@@ -1,0 +1,74 @@
+     [
+          {
+               "name": "Mercedes-AMG G63",
+               "desc": "The 2021 Mercedes-AMG G63 comes with a twin-turbocharged 4.0-liter V-8 engine that makes 577 horsepower and 627 lb-ft of torque. A nine-speed automatic gearbox with steering-wheel-mounted paddle shifters sends all that power to the all-wheel-drive system",
+               "price": "3,36,11,150",
+               "img": "https://i.ibb.co/VS89ZGH/mercedis2.png"
+          },
+          {
+               "name": "BMW X1",
+               "desc": "BMW X1 in The 2021 comes with a twin-turbocharged 4.0-liter V-8 engine that makes 577 horsepower and 627 lb-ft of torque. A nine-speed automatic gearbox with steering-wheel-mounted paddle shifters sends all that power to the all-wheel-drive system",
+               "price": "2,60,11,150",
+               "img": "https://i.ibb.co/RC2d8qf/bmw1.png"
+          },
+          {
+               "name": "Audi Q8",
+               "desc": "Audi Q8 in The 2021 comes with a twin-turbocharged 4.0-liter V-8 engine that makes 577 horsepower and 627 lb-ft of torque. A nine-speed automatic gearbox with steering-wheel-mounted paddle shifters sends all that power to the all-wheel-drive system",
+               "price": "4,60,11,150",
+               "img": "https://i.ibb.co/kKVLFQP/audi1.png"
+          },
+          {
+               "name": "Ferrari",
+               "desc": "Ferrari comes with a twin-turbocharged 4.0-liter V-8 engine that makes 577 horsepower and 627 lb-ft of torque. A nine-speed automatic gearbox with steering-wheel-mounted paddle shifters sends all that power to the all-wheel-drive system",
+               "price": "20,50,11,150",
+               "img": "https://i.ibb.co/M6kSjdx/golden.png"
+          },
+          {
+               "name": "Lamborghini Huracan",
+               "desc": "Lamborghini Huracan Mach-E in The 2021 comes with a twin-turbocharged 4.0-liter V-8 engine that makes 577 horsepower and 627 lb-ft of torque. A nine-speed automatic gearbox with steering-wheel-mounted paddle shifters sends all that power to the all-wheel-drive system",
+               "price": "8,90,11,150",
+               "img": "https://i.ibb.co/M7GNSfQ/ferari.png"
+          },
+          {
+               "name": "Mercedes-benz Cla 180",
+               "desc": "The 2021 Mercedes-benz Cla 180 comes with a twin-turbocharged 4.0-liter V-8 engine that makes 577 horsepower and 627 lb-ft of torque. A nine-speed automatic gearbox with steering-wheel-mounted paddle shifters sends all that power to the all-wheel-drive system",
+               "price": "2,40,11,150",
+               "img": "https://i.ibb.co/mS9p9Df/mercedes1.png"
+          },
+          {
+               "name": "Lamborghini Huracan Evo",
+               "desc": "Lamborghini Huracan Evo comes with a twin-turbocharged 4.0-liter V-8 engine that makes 577 horsepower and 627 lb-ft of torque. A nine-speed automatic gearbox with steering-wheel-mounted paddle shifters sends all that power to the all-wheel-drive system",
+               "price": "5,40,11,150",
+               "img": "https://i.ibb.co/X2gznDm/lamborgini.png"
+          },
+          {
+               "name": "2022 Ford Mustang Mach-E",
+               "desc": "2022 Ford Mustang Mach-E in The 2021 comes with a twin-turbocharged 4.0-liter V-8 engine that makes 577 horsepower and 627 lb-ft of torque. A nine-speed automatic gearbox with steering-wheel-mounted paddle shifters sends all that power to the all-wheel-drive system",
+               "price": "1,60,11,150",
+               "img": "https://i.ibb.co/TM8zwc3/ford1.png"
+          },
+          {
+               "name": "Bugatti Chiron",
+               "desc": "Bugatti Chiron comes with a twin-turbocharged 4.0-liter V-8 engine that makes 577 horsepower and 627 lb-ft of torque. A nine-speed automatic gearbox with steering-wheel-mounted paddle shifters sends all that power to the all-wheel-drive system",
+               "price": "10,50,11,150",
+               "img": "https://i.ibb.co/XScDwqq/bugati1.png"
+          },
+          {
+               "name": "Range Rover",
+               "desc": "Range Rover comes with a twin-turbocharged 4.0-liter V-8 engine that makes 577 horsepower and 627 lb-ft of torque. A nine-speed automatic gearbox with steering-wheel-mounted paddle shifters sends all that power to the all-wheel-drive system",
+               "price": "10,50,11,150",
+               "img": "https://i.ibb.co/7RpVctY/rangeR1.png"
+          },
+          {
+               "name": "Mini E5",
+               "desc": "Mini E5 comes with a twin-turbocharged 4.0-liter V-8 engine that makes 577 horsepower and 627 lb-ft of torque. A nine-speed automatic gearbox with steering-wheel-mounted paddle shifters sends all that power to the all-wheel-drive system",
+               "price": "50,11,150",
+               "img": "https://i.ibb.co/tm06PH8/small.png"
+          },
+          {
+               "name": "Mercedes-benz Gle 450",
+               "desc": "Mercedes-benz Gle 450 in 2021 comes with a twin-turbocharged 4.0-liter V-8 engine that makes 577 horsepower and 627 lb-ft of torque. A nine-speed automatic gearbox with steering-wheel-mounted paddle shifters sends all that power to the all-wheel-drive system",
+               "price": "1,90,11,150",
+               "img": "https://i.ibb.co/3FD5qPX/mercedis3.png"
+          }
+     ]
