@@ -14,7 +14,7 @@ const Navigation = () => {
     const { user, handleSignOut } = useAuth()
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="fixed" sx={{ bgcolor: "#1C0C5B" }}>
+            <AppBar position="static" sx={{ bgcolor: "#1C0C5B", color: 'white' }}>
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -30,11 +30,11 @@ const Navigation = () => {
                     </Typography>
                     <Link to="/allcars"> <Button color="inherit">All Cars</Button></Link>
                     {
-                        user.email && <Link to="/dashboard"> <Button color="inherit">Dashboard</Button></Link>
+                        user.email && <Link to="/dashboard" style={{ textDecoration: 'none' }}> <Button color="inherit">Dashboard</Button></Link>
                     }
-                    <Link to="/appiontment"> <Button color="inherit">Purchase</Button></Link>
+                    <Link to="/purchase/:id" style={{ textDecoration: 'none' }}> <Button color="inherit">Purchase</Button></Link>
                     {
-                        user?.email ? <Link to="/login"> <Button onClick={handleSignOut} color="inherit">Log out</Button></Link> : <Link to="/login"> <Button color="inherit">Login</Button></Link>
+                        user?.email ? <Link to="/login" style={{ textDecoration: 'none' }}> <Button onClick={handleSignOut} color="inherit">Log out</Button></Link> : <Link to="/login"> <Button color="inherit">Login</Button></Link>
                     }
                 </Toolbar>
             </AppBar>

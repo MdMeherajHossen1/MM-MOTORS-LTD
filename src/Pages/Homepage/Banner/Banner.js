@@ -14,7 +14,7 @@ const Banner = () => {
         height: '100vh'
     }
     return (
-        <Box sx={{ flexGrow: 1, mt: 3 }} style={bannerBg} display="flex"
+        <Box sx={{ flexGrow: 1 }} style={bannerBg} display="flex"
             width={500} height={80}
             bgcolor="lightgreen"
             alignItems="center"

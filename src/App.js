@@ -7,6 +7,7 @@ import Register from './Pages/Loginpage/Register/Register';
 import AllCars from './Pages/AllCars/AllCars';
 import Dashboard from './Pages/Dashboardpage/Dashboard/Dashboard'
 import PrivateRoute from './Pages/Sharedpage/PrivateRoute/PrivateRoute'
+import Purchase from './Pages/Purchase/Purchase'
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
+            </PrivateRoute>
+            <PrivateRoute path="/purchase/:id">
+              <Purchase></Purchase>
             </PrivateRoute>
           </Switch>
         </Router>

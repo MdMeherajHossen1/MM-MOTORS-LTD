@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const AddReview = () => {
     const [reviews, setReviews] = useState({})
     const handleOnBlur = e => {
-
+        const name 
     }
     const handleOnSubmit = e => {
 
