@@ -28,7 +28,8 @@ const Navigation = () => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
                         MM MOTORS LTD
                     </Typography>
-                    <Link to="/allcars"> <Button color="inherit">All Cars</Button></Link>
+                    <Link to="/" style={{ textDecoration: 'none' }}> <Button color="inherit">HOME</Button></Link>
+                    <Link to="/allcars" style={{ textDecoration: 'none' }}> <Button color="inherit">All Cars</Button></Link>
                     {
                         user.email && <Link to="/dashboard" style={{ textDecoration: 'none' }}> <Button color="inherit">Dashboard</Button></Link>
                     }

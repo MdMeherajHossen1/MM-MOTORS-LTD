@@ -1,4 +1,4 @@
-import { Box, Button, Grid } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import bimage from '../../../images/banner1.png'

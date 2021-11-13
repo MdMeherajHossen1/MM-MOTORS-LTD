@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useParams, useHistory } from 'react-router';
 import useAuth from '../../hooks/useAuth';
-import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 import Card from '@mui/material/Card';
@@ -20,11 +19,12 @@ const Purchase = () => {
     const [car, setCar] = useState(null)
     const [order, setOrder] = useState({})
     const { id } = useParams()
+    const history = useHistory()
     const { user, error, loading } = useAuth()
 
     // data fetching from db by id 
     useEffect(() => {
-        fetch(`http://localhost:5000/cars?id=${id}`)
+        fetch(`https://mysterious-atoll-03905.herokuapp.com/cars?id=${id}`)
             .then(res => res.json())
             .then(data => {
                 if (data.length) {
@@ -39,7 +39,6 @@ const Purchase = () => {
         const value = e.target.value;
         const orderData = { ...order }
         orderData[feild] = value;
-        console.log(feild, value, orderData)
         setOrder(orderData)
     }
     //  submit order to the database
@@ -57,7 +56,7 @@ const Purchase = () => {
                 car: car?.[0]
             }
 
-            fetch('http://localhost:5000/orders', {
+            fetch('https://mysterious-atoll-03905.herokuapp.com/orders', {
                 method: "POST",
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(orderInfo)
@@ -68,6 +67,7 @@ const Purchase = () => {
                         alert('Congratulation, Your orders has successfuly done.')
                         setCar(null)
                         setOrder({})
+                        history.push('/')
                     }
                 })
         }

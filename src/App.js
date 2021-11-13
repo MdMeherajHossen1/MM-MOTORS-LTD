@@ -8,6 +8,7 @@ import AllCars from './Pages/AllCars/AllCars';
 import Dashboard from './Pages/Dashboardpage/Dashboard/Dashboard'
 import PrivateRoute from './Pages/Sharedpage/PrivateRoute/PrivateRoute'
 import Purchase from './Pages/Purchase/Purchase'
+import NotFound from './Pages/NotFound/NotFound';
 function App() {
   return (
     <div className="App">
@@ -32,6 +33,9 @@ function App() {
             <PrivateRoute path="/purchase/:id">
               <Purchase></Purchase>
             </PrivateRoute>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
         </Router>
       </AuthProvider>

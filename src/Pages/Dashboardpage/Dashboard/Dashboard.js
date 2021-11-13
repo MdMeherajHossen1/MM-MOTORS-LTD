@@ -6,36 +6,28 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import useAuth from '../../../hooks/useAuth'
-import {
-
-    Switch,
-    Route,
-    Link,
-
-    useRouteMatch
-} from "react-router-dom";
-// import DashboardHome from '../DashboardHome/DashboardHome'
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
+import Pay from '../Pay/Pay'
+import Myorders from '../MyOrders/Myorders';
 import MakeaAdmin from '../MakeaAdmin/MakeaAdmin';
-// import AddDoctors from '../AddDoctors/AddDoctors';
-// import AdminRoute from '../../../AdminRoute/AdminRoute';
-
+import AddaCar from '../AddACar/AddaCar';
+import AllOrders from '../AllOrders/AllOrders';
+import AddReview from '../AddReview/AddReview';
+import ManageCars from '../ManageCars/ManageCars';
+import AdminRoute from '../../Sharedpage/AdminRoute/AdminRoute';
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
     let { path, url } = useRouteMatch();
-    const { admin } = useAuth()
+    const { user, handleSignOut, admin } = useAuth()
+
 
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -45,22 +37,29 @@ function Dashboard(props) {
     };
 
     const drawer = (
-        <div>
+        <div >
             <Toolbar />
             <Divider />
-            <List>
-                <Link to="/allcars"> <Button color="inherit">All Cars</Button></Link>
-                <Link to={`${url}`}> <Button color="inherit">Dashboard</Button></Link>
-                {admin && <Box>  <Link to={`${url}/makeAdmin`}> <Button color="inherit">Make Admin</Button></Link>
-                    <Link to={`${url}/addDoctor`}> <Button color="inherit">Add a Doctor</Button></Link>      </Box>}
-                {['Dashboard', 'Appiontment', 'Patients', 'Prescriptions', 'setting'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+            <List sx={{ bgcolor: "#1C0C5B" }} >
+                <Link style={{ textDecoration: 'none', color: 'white' }} to="/allcars"> <Button variant="contained" sx={{ bgcolor: 'secondary.main', width: '90%', mb: 2 }}>All Cars</Button></Link>
+
+                <Link style={{ textDecoration: 'none' }} to={`${url}`}> <Button color="inherit">Dashboard</Button></Link>
+                {admin ? <Box> <Link style={{ textDecoration: 'none' }} to={`${url}/makeadmin`}><Button variant="contained" sx={{ bgcolor: 'secondary.main', width: '90%', mb: 2 }}>Make Admin</Button></Link>
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/addcar`}><Button variant="contained" sx={{ bgcolor: 'secondary.main', width: '90%', mb: 2 }}>Add A Car</Button></Link>
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/allorder`}><Button variant="contained" sx={{ bgcolor: 'secondary.main', width: '90%', mb: 2 }}>ALL ORDERS</Button></Link>
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/allcars`}><Button variant="contained" sx={{ bgcolor: 'secondary.main', width: '90%', mb: 2 }}>Manage ALL Cars</Button></Link>
+                    <Button variant="contained" onClick={handleSignOut} sx={{ bgcolor: 'secondary.main', width: '90%', mb: 2 }}>Log Out</Button>
+                </Box>
+
+                    :
+                    <Box>
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/pay`}><Button variant="contained" sx={{ bgcolor: 'secondary.main', width: '90%', mb: 2 }}>Pay</Button></Link>
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/myorders`}><Button variant="contained" sx={{ bgcolor: 'secondary.main', width: '90%', mb: 2 }}>My Orders</Button></Link>
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/review`}><Button variant="contained" sx={{ bgcolor: 'secondary.main', width: '90%', mb: 2 }}>Add a Review</Button></Link>
+                        <Button variant="contained" onClick={handleSignOut} sx={{ bgcolor: 'secondary.main', width: '90%', mb: 2 }}>Log Out</Button>
+                    </Box>
+                }
+
             </List>
         </div>
     );
@@ -68,7 +67,7 @@ function Dashboard(props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }} >
             <CssBaseline />
             <AppBar
                 position="fixed"
@@ -77,7 +76,7 @@ function Dashboard(props) {
                     ml: { sm: `${drawerWidth}px` },
                 }}
             >
-                <Toolbar>
+                <Toolbar sx={{ bgcolor: "#1C0C5B" }} >
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -94,7 +93,7 @@ function Dashboard(props) {
             </AppBar>
             <Box
                 component="nav"
-                sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+                sx={{ width: { sm: drawerWidth }, bgcolor: '#1C0C5B', flexShrink: { sm: 0 } }}
                 aria-label="mailbox folders"
             >
 
@@ -128,14 +127,40 @@ function Dashboard(props) {
             </Box>
             <Box
                 component="main"
-                sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+                sx={{ flexGrow: 1, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
 
                 <Switch>
+                    <Route path={`${path}/pay`}>
+                        <Pay></Pay>
+                    </Route>
+                    <Route path={`${path}/review`}>
+                        <AddReview></AddReview>
+                    </Route>
+                    <Route path={`${path}/myorders`}>
+                        <Myorders></Myorders>
+                    </Route>
+                    {
+                        admin && <Box>
+                            <AdminRoute path={`${path}/makeadmin`}>
+                                <MakeaAdmin></MakeaAdmin>
+                            </AdminRoute>
+                            <AdminRoute path={`${path}/addcar`}>
+                                <AddaCar></AddaCar>
+                            </AdminRoute>
+                            <AdminRoute path={`${path}/allorder`}>
+                                <AllOrders></AllOrders>
+                            </AdminRoute>
+                            <AdminRoute path={`${path}/allcars`}>
+                                <ManageCars></ManageCars>
+                            </AdminRoute>
+                        </Box>
+                    }
                     {/* <Route exact path={path}>
                         <DashboardHome></DashboardHome>
                     </Route>
+                    
                     {admin && <Box>
                         <AdminRoute path={`${path}/makeAdmin`}>
                             <MakeAdmin></MakeAdmin>

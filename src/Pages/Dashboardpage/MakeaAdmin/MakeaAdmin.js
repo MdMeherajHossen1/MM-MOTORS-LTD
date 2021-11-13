@@ -14,19 +14,19 @@ const MakeAdmin = () => {
     const handleOnSubmit = e => {
 
         const user = { email }
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://mysterious-atoll-03905.herokuapp.com/users/admin', {
             method: 'PUT',
 
             headers: {
-                'content-type': 'application/json',
-                'authorization': `Bearer ${token}`
+                'authorization': `Bearer ${token}`,
+                'content-type': 'application/json'
             },
             body: JSON.stringify(user)
         })
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-                    console.log(data);
+
                     setSuccess(true);
                 }
             })
@@ -35,20 +35,22 @@ const MakeAdmin = () => {
 
 
     return (
-        <div>
+        <div style={{ backgroundColor: '#1C0C5B', height: '400px', color: 'white' }}>
             <h2> Make an Admin</h2>
             {success && <Alert severity="success">Made Admin successfully!</Alert>}
             <form onSubmit={handleOnSubmit}>
                 <TextField
-                    label="Standard"
-                    variant="standard"
+                    required
+                    sx={{ width: "85%", m: 1 }}
+                    onBlur={handleOnBlur}
                     name="email"
                     type="email"
-                    onBlur={handleOnBlur}
-                />
-                <Button type="submit" variant="contained">ADD AS ADMIN</Button>
+                    color="secondary" focused
+                    variant="filled" />
+                <Button type="submit" sx={{ width: "85%", m: 1, bgcolor: 'secondary.main' }} variant="contained">ADD AS ADMIN</Button>
             </form>
         </div>
+
     );
 };
 
