@@ -16,13 +16,13 @@ const ManageCars = () => {
     }, [deleted])
 
     const handleDelete = id => {
-        const confirmMessage = window.confirm("Are you sure ? You want to Cencel your Order?")
+        const confirmMessage = window.confirm("Are you sure ? You want to Cencel Remove This Car?")
         if (confirmMessage) {
             fetch(`https://mysterious-atoll-03905.herokuapp.com/cars/${id}`, { method: "DELETE" })
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('Successfuly Cancel Your Order')
+                        alert('Successfuly Remove This Car')
                         const remaining = cars.filter(od => od._id !== id)
                         setCars(remaining)
                         setDeleted(true)

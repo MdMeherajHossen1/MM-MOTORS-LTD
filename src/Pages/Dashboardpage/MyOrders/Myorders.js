@@ -16,7 +16,7 @@ const Myorders = () => {
     }, [deleted])
 
     const handleDelete = id => {
-        const confirmMessage = window.confirm("Are you sure ? You want to Cencel your Order?")
+        const confirmMessage = window.confirm("Are you sure ? You want to Cencel your Order's Car?")
         if (confirmMessage) {
             fetch(`https://mysterious-atoll-03905.herokuapp.com/orders/${id}`, { method: "DELETE" })
                 .then(res => res.json())
